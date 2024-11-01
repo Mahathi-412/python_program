@@ -1,0 +1,22 @@
+s=input()
+lst=set()
+for i in range(len(s)):
+    res=''
+    for j in range(i,len(s)):
+        res+=s[j]
+        lst.add(res)
+lst1=list(lst)
+lst1.sort()
+ans=[]
+for string in lst1:
+    count=0
+    res1=''
+    for i in range(len(string)):
+        if string[i] not in res1:
+            res1+=string[i]
+            count+=1
+        else:
+            count=0
+            break
+    ans.append(count)
+print(max(ans))
